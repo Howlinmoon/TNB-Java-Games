@@ -23,7 +23,14 @@ public class Game extends StateBasedGame {
 	}
 	
 	public static void main(String[] args) {
-
+		AppGameContainer appgc;
+		try {
+			appgc = new AppGameContainer(new Game(gamename));
+			appgc.setDisplayMode(640, 360, false);
+			appgc.start();
+		} catch (SlickException e) {
+			e.printStackTrace();
+		}
 
 	}
 
