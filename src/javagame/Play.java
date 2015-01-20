@@ -89,6 +89,30 @@ public class Play extends BasicGameState {
 				buckyPositionX = -520;
 			}
 		}
+		
+		// checking for escape
+		if (input.isKeyDown(Input.KEY_ESCAPE)) {
+			quit = true;
+		}
+		
+		// handle the popup menu
+		if (quit == true) {
+			if (input.isKeyDown(Input.KEY_R)) {
+				// resume game play
+				quit = false;
+			}
+			
+			if (input.isKeyDown(Input.KEY_M)) {
+				// return to the menu state
+				sbg.enterState(0);
+			}
+
+			if (input.isKeyDown(Input.KEY_Q)) {
+				// quit the game
+				System.exit(0);
+			}
+			
+		}
 
 	
 	
