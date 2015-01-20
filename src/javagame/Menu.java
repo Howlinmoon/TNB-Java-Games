@@ -38,7 +38,22 @@ public class Menu extends BasicGameState {
 		xpos = Mouse.getX();
 		ypos = Mouse.getY();
 		mouse = "Mouse X position: " + xpos + ", Y position: " + ypos;
+		
+		// Play Now
+		if ( (xpos > 100 && xpos < 311) && (ypos > 882 && ypos < 920) ) {
+			if (Mouse.isButtonDown(0)) {
+				sbg.enterState(1);
+			}
+		}
 
+		// Exit the game
+		if ( (xpos > 100 && xpos < 311) && (ypos > 781 && ypos < 819) ) {
+			if (Mouse.isButtonDown(0)) {
+				System.exit(0);
+			}
+		}
+
+		
 	}
 
 	public int getID() {
