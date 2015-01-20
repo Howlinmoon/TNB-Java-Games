@@ -54,8 +54,44 @@ public class Play extends BasicGameState {
 		if (input.isKeyDown(Input.KEY_UP)) {
 			bucky = movingUp;
 			buckyPositionY += delta * .1f;
+			// 510
+			if (buckyPositionY > 510) {
+				buckyPositionY = 510;
+			}
 			
 		}
+
+		if (input.isKeyDown(Input.KEY_DOWN)) {
+			bucky = movingDown;
+			buckyPositionY -= delta * .1f;
+			// -250
+			if (buckyPositionY < -250) {
+				buckyPositionY = -250;
+			}
+			
+		}
+
+		if (input.isKeyDown(Input.KEY_LEFT)) {
+			bucky = movingLeft;
+			buckyPositionX += delta * .1f;
+			// 640
+			if (buckyPositionX > 640) {
+				buckyPositionX = 640;
+			}
+			
+		}
+
+		if (input.isKeyDown(Input.KEY_RIGHT)) {
+			bucky = movingRight;
+			buckyPositionX -= delta * .1f;
+			// -520
+			if (buckyPositionX < -520) {
+				buckyPositionX = -520;
+			}
+		}
+
+	
+	
 	}
 
 	public int getID() {
