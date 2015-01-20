@@ -35,7 +35,18 @@ public class Play extends BasicGameState {
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-
+		worldMap.draw(buckyPositionX, buckyPositionY);
+		bucky.draw(shiftX, shiftY);
+		g.drawString("Bucky X: "+buckyPositionX+"\nBucky Y: "+buckyPositionY, 400, 20);
+		
+		if (quit == true) {
+			g.drawString("Resume (R)", 250, 100);
+			g.drawString("Main Menu (M)", 150, 100);
+			g.drawString("Quit Game (Q)", 50, 100);
+			if (quit == false) {
+				g.clear();
+			}
+		}
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
