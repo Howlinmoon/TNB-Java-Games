@@ -50,7 +50,12 @@ public class Play extends BasicGameState {
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
-		
+		Input input = gc.getInput();
+		if (input.isKeyDown(Input.KEY_UP)) {
+			bucky = movingUp;
+			buckyPositionY += delta * .1f;
+			
+		}
 	}
 
 	public int getID() {
