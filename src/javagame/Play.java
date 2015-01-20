@@ -20,7 +20,18 @@ public class Play extends BasicGameState {
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sbg)  throws SlickException {
+		worldMap = new Image("res/world.png");
+		Image[] walkUp = {new Image("res/buckysBack.png"), new Image("res/buckysBack.png")};
+		Image[] walkDown = {new Image("res/buckysFront.png"), new Image("res/buckysFront.png")};
+		Image[] walkLeft = {new Image("res/buckysLeft.png"), new Image("res/buckysLeft.png")};
+		Image[] walkRight = {new Image("res/buckysRight.png"), new Image("res/buckysRight.png")};
 		
+		movingUp = new Animation(walkUp, duration,  false);
+		movingDown = new Animation(walkDown, duration,  false);
+		movingLeft = new Animation(walkLeft, duration,  false);
+		movingRight = new Animation(walkRight, duration,  false);
+		
+		bucky = movingDown;
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
